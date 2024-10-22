@@ -1,0 +1,6 @@
+# This image is to handle the docker operator in airflow
+FROM bitnami/spark:3.5.0s
+
+RUN pip install py4j psycopg2-binary pandas
+
+COPY ./spark_consumer.py ./spark_consumer.py
