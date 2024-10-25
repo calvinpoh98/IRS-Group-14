@@ -1,0 +1,8 @@
+*__pycache__
+*log*
+*snapshot*
+*checkpoint*
+/data_pulling/kafka/data/__cluster_metadata-0
+/data_pulling/kafka/data/traffic_data-0
+/data_pulling/kafka/data
+GA/MasterPlan2019LandUselayer.geojson
