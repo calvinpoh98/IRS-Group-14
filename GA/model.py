@@ -31,10 +31,19 @@ def load_districts(file_path: str) -> gpd.GeoDataFrame:
     gdf_districts = gpd.GeoDataFrame(properties_list, geometry=geometries)
     gdf_districts['centroid'] = gdf_districts['geometry'].centroid
 
-    area_exclusion = ["Western Islands", "North-Eastern Islands"]
-    gdf_districts_filtered = gdf_districts[~gdf_districts["planning_area"].isin(
-        area_exclusion)]
-    return gdf_districts_filtered
+    waste_df = pd.read_excel("GA\Singapore population 2020 V2.xlsx")
+    waste_df = waste_df[waste_df['Subzone'] == 'Total']
+    waste_df = waste_df.drop(index=0)
+    waste_df = waste_df.iloc[:, [0, -1]]
+
+    gdf_districts = gdf_districts.merge(
+        waste_df, how='left', left_on='planning_area', right_on='Planning Area of Residence')
+    gdf_districts = gdf_districts.drop(['Planning Area of Residence'], axis=1)
+
+    gdf_districts = gdf_districts[
+        gdf_districts['Waste Generated Per Day (kg)'] != 0.0]
+    gdf_districts = gdf_districts.reset_index(drop=True)
+    return gdf_districts
 
 
 class network_graph:
@@ -148,7 +157,7 @@ class network_graph:
               '#000080', '#808000', '#F5F5DC', '#C0C9C0', '#000089', '#898009',
               '#F6F5E2', '#87CEEB', '#C71585', '#228B22', '#B8860B', '#FF6347',
               '#FF0000', '#00FF00', '#0000FF', '#F60009', '#09F600', '#0009F6',
-              '#FFFF00', '#00FFFF', '#FF00FF', '#F6F609', '#09F6F6', '#F609F6']
+              '#FFFF00', '#00FFFF', '#FF00FF', '#F6F609', '#09F6F6', '#F609F6']*4
 
     def draw_show_all_fig(self, best_solution):
         all_routes = []
