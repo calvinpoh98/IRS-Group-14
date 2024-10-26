@@ -48,6 +48,10 @@ if not st.session_state.initialized:
     }
     network.set_depot_nodes(depot_locations)
 
+    location_mappings = {node:loc for node,loc in zip(network.collection_nodes, gdf_districts["planning_area"])}
+    incineration_mappings = {node:loc for node,loc in zip(network.depot_nodes, depot_locations.keys())}
+    all_mappings = {**location_mappings, **incineration_mappings}
+    
     # Load LSTM and scaler model
     traffic_prediction_handler = TrafficPredictionModel(
         model_path=os.path.join(current_dir, "TrafficConditions", "traffic_prediction_model.keras"),
@@ -80,6 +84,7 @@ if not st.session_state.initialized:
     for truck_idx, truck_trips in enumerate(best_solution):
         working_trucks.add(truck_idx + 1)
         for trip_time, locations in truck_trips:
+            locations = [all_mappings[loc] for loc in locations]
             working_times.add(trip_time)
             flattened_data.append({
                 "Truck": truck_idx + 1,
