@@ -183,8 +183,8 @@ elif sorting_option == 'Depot Points':
     depot_option = st.selectbox(
         "Choose Depot:", st.session_state.depot_locations.keys(), index=0)
     depot_dict = {"TWTE": 0, "KSTP": 1, "TSIP": 2, "SWTE": 3}
-    df = flattened_df[flattened_df['Locations'].apply(lambda x: x.split(' ')[0]) == str(
-        st.session_state.network.depot_nodes[depot_dict[depot_option]])]
+    df = flattened_df[flattened_df['Locations'].apply(
+        lambda x: x.split(' ')[0]) == str(depot_option)]
     st.table(df)
     placeholder = st.empty()
     placeholder.write('Loading Figure...')
