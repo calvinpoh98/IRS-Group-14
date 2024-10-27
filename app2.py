@@ -15,7 +15,7 @@ from langchain.llms import OpenAI
 os.environ["OPENAI_API_KEY"] = "sk-3SSseKA8p57h-UfQ9wBbmcxiyYycRPPWRhcg5ICY6ZT3BlbkFJEQIy8niz2IMuVp8QBrgSJAAxJa6hOXzHfKNqOgDLQA"
 
 # Load CSV for LangChain Chatbot
-data_file_path = 'Telemetry/truck_chat_data.csv'
+data_file_path = 'Telemetry_KJ/truck_chat_data.csv'
 
 # Initialize the LangChain Agent for CSV
 
