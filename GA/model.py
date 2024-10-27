@@ -12,6 +12,7 @@ from deap import base, creator, tools, algorithms
 from builtins import sum
 from datetime import timedelta, datetime
 from copy import deepcopy
+import os
 
 
 def load_districts(file_path: str) -> gpd.GeoDataFrame:
@@ -31,7 +32,9 @@ def load_districts(file_path: str) -> gpd.GeoDataFrame:
     gdf_districts = gpd.GeoDataFrame(properties_list, geometry=geometries)
     gdf_districts['centroid'] = gdf_districts['geometry'].centroid
 
-    waste_df = pd.read_excel("GA\Singapore population 2020 V2.xlsx")
+    
+    path = os.path.join("GA","Singapore population 2020 V2.xlsx")
+    waste_df = pd.read_excel(path)
     waste_df = waste_df[waste_df['Subzone'] == 'Total']
     waste_df = waste_df.drop(index=0)
     waste_df = waste_df.iloc[:, [0, -1]]
@@ -542,8 +545,7 @@ class GeneticAlgorithm:
         # Initialize population
         # Adjust population size as needed
         population = self.toolbox.population(n=20)
-        print(f"Initial population generated with {
-              len(population)} individuals.")
+        print(f"Initial population generated with {len(population)} individuals.")
 
         # Run the GA using DEAP's eaSimple
         result_population, log = algorithms.eaSimple(
