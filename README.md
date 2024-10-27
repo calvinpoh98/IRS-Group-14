@@ -10,7 +10,7 @@ Waste collection is a significant cost component for waste management companies,
 |  Official Full Name | Student ID | Work Items (Who did what) | Email (Optional) |
 | ------------ | ------------ | ------------ | ------------ |
 | Chua Khiong Jian  | A0098110M | Predictive maintenance module (Data preprocessing, model selection, model fine-tuning), Project management, App user experience enhancement| e0054251@u.nus.edu  |
-| Poh Yong Quan | A0201811Y  |   |   |
+| Poh Yong Quan | A0201811Y  |  Transport data pulling pipeline & modelling, EDA & GA implementation, Frontend Integration  | e0415620@u.nus.edu  |
 | Tong Chang  | A0285978Y | EDA, GA design & implementation, result visulizing and filtering | e1221790@u.nus.edu |
 | Sasipriya Ayyanan | A0291211U | RAG setup, SQL agent implementation, Truck Telemtry experiments, Front end integration(chatbot) |e1330350@u.nus.edu |
 
