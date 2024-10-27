@@ -12,7 +12,7 @@ Waste collection is a significant cost component for waste management companies,
 | Chua Khiong Jian  | A0098110M |   | e0054251@u.nus.edu  |
 | Poh Yong Quan | A0201811Y  |   |   |
 | Tong Chang  | A0285978Y |   |   |
-| Sasipriya Ayyanan | A0291211U |   |   |    |
+| Sasipriya Ayyanan | A0291211U | RAG setup, SQL agent implementation, Truck Telemtry experiments |e1330350@u.nus.edu |
 
 # SECTION 4 : VIDEO OF SYSTEM MODELLING & USE CASE DEMO
 
