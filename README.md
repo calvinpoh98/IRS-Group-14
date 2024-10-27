@@ -33,7 +33,7 @@ Refer to appendix <Installation & User Guide> in project report.
 - Run application in terminal: streamlit run app.py
 
 # SECTION 6 : PROJECT REPORT / PAPER
-Refer to project report at Github Folder: ProjectReport
+Refer to project report uploaded in Canvas
 
 # SECTION 7 : MISCELLANEOUS
-Refer to Github Folder: Miscellaneous
+-
