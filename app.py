@@ -12,7 +12,7 @@ from langchain.llms import OpenAI
 
 # Load API key for OpenAI
 # Replace with your OpenAI API key
-os.environ["OPENAI_API_KEY"] = "sk-3SSseKA8p57h-UfQ9wBbmcxiyYycRPPWRhcg5ICY6ZT3BlbkFJEQIy8niz2IMuVp8QBrgSJAAxJa6hOXzHfKNqOgDLQA"
+os.environ["OPENAI_API_KEY"] = "Insert your openai api key here"
 
 # Load CSV for LangChain Chatbot
 data_file_path = 'Telemetry/truck_chat_data.csv'
